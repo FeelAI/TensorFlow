@@ -10,7 +10,7 @@ def regression(x):
 
 def convolutional(x, keep_prob):
     def conv2d(x, W):
-        return tf.nn.conv2d([1, 1, 1, 1], padding="SAME")
+        return tf.nn.conv2d(x, W, [1, 1, 1, 1], padding="SAME")
     def max_pool_2x2(x):
         return tf.nn.max_pool(x, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding="SAME")
     def weight_variable(shape):

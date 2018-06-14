@@ -26,7 +26,7 @@ with tf.Session() as sess:
         batch_xs, batch_ys = data.train.next_batch(100)
         sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys})
 
-    print((sess.run(accuracy, feed_dict={x: data.test.images, y_: data.test.labels})))
+    print(sess.run(accuracy, feed_dict={x: data.test.images, y_: data.test.labels}))
 
     path = saver.save(
         sess, os.path.join(os.path.dirname(__file__), 'data', 'regression.ckpt'),
